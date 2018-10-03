@@ -3,7 +3,11 @@ dist: trusty
 
 python:
   - 2.7
+env:
+  - SDL_VIDEODRIVER="dummy" SDL_AUDIODRIVER="dummy"
 virtualenv:
   system_site_package: true
+install:
+  - pip install -r requirements.txt
 script:
   - python -m unittest discover test/
