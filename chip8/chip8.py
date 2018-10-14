@@ -86,11 +86,11 @@ class Chip8(object):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         './chip8.py',
-        description='CHIP-8 emulator/interpreter',
+        description='CHIP-8 interpreter',
         formatter_class=lambda prog: argparse.HelpFormatter(
             prog, max_help_position=100, width=150))
 
-    parser.add_argument('program', help='CHIP-8 ROM file')
+    parser.add_argument('program', help='CHIP-8 ROM')
 
     parser.add_argument('-d', '--delay', type=int, default=1,
                         help='Specify delay for every instruction (default=1ms)')
