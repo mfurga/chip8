@@ -1,10 +1,9 @@
 #!/usr/bin/env python2
-'''
-    CHIP-8 emulator.
-
-    Copyright (C) 2018 Mateusz Furga
-    This software is released under the MIT license.
-'''
+#
+# CHIP-8 interpreter.
+#
+# Copyright (C) 2018 Mateusz Furga
+# This software is released under the MIT license.
 
 import argparse
 import pygame

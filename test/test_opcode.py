@@ -1,12 +1,10 @@
-'''
-    CHIP-8 emulator.
-
-    Copyright (C) 2018 Mateusz Furga
-    This software is released under the MIT license.
-'''
+#
+# CHIP-8 interpreter.
+#
+# Copyright (C) 2018 Mateusz Furga
+# This software is released under the MIT license.
 
 import unittest
-
 from chip8.opcode import InvalidOpcodeException, Opcode
 from chip8.chip8 import Chip8
 

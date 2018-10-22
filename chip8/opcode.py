@@ -1,13 +1,11 @@
-'''
-    CHIP-8 emulator.
-
-    Copyright (C) 2018 Mateusz Furga
-    This software is released under the MIT license.
-'''
+#
+# CHIP-8 interpreter.
+#
+# Copyright (C) 2018 Mateusz Furga
+# This software is released under the MIT license.
 
 import pygame
 import random
-import sys
 
 from display import KEY_MAP
 
