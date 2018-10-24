@@ -1,4 +1,5 @@
 [flake8]
-exclude = .git,__pycache__,build,dist
+ignore = E221,E241
+exclude = .git,__pycache__,build,dist,env,*.pyc
 max-line-length = 120
 max-complexity = 10
