@@ -19,14 +19,14 @@ SOUND_EFFECT_FILENAME = 'buzz.wav'
 
 
 class Chip8(object):
-    '''
+    """
     CHIP-8 main class.
 
     Sources:
         https://en.wikipedia.org/wiki/CHIP-8
         http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
 
-    Chip-8 has:
+    CHIP-8 has:
     - 16 x 8-bit general purpose registers (V0 - VF) (0 through F)
     - 1 x 16-bit index register called I (store memory address)
     - 1 x 16-bit program counter (PC) (store currently executing address)
@@ -34,7 +34,7 @@ class Chip8(object):
     - 1 x 8-bit delay timer (DT)
     - 1 x 8-bit sound timer (ST)
     - 16 x 16 bit array using for stack
-    '''
+    """
 
     def __init__(self, data, scale=10):
         self.mem = Memory()
@@ -55,17 +55,13 @@ class Chip8(object):
 
     @classmethod
     def load_program_from_file(cls, fname, scale):
-        '''
-        Loads up program data into memory.
-        '''
+        """Loads up program data into memory."""
         with open(fname, 'rb') as f:
             data = bytearray(f.read())
         return cls(data, scale)
 
     def run(self, delay):
-        '''
-        Fetches the opcode (2 bytes) from memory and executes it.
-        '''
+        """Fetches the opcode (2 bytes) from the memory and executes it."""
         running = True
         while running:
             pygame.time.wait(delay)

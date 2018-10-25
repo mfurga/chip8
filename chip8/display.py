@@ -46,7 +46,7 @@ COLORS = (
 
 
 class Display(object):
-    '''
+    """
     CHIP-8 display class.
 
     Source:
@@ -60,7 +60,7 @@ class Display(object):
                 |                       |
                 |(0, 31)        (63, 31)|
                 +-----------------------+
-    '''
+    """
 
     def __init__(self, vm, width=WIDTH, height=HEIGHT, scale=1):
         self.vm = vm
@@ -71,10 +71,10 @@ class Display(object):
         self.init_display()
 
     def init_display(self):
-        '''
-        Initializes the screen. Sets the width & height of the screen
+        """
+        Initializes the screen. Sets the width & the height of the screen
         multiplied by the scale.
-        '''
+        """
         pygame.display.init()
         pygame.display.set_caption('CHIP-8 Emulator')
         self.surface = pygame.display.set_mode(
@@ -83,22 +83,16 @@ class Display(object):
         )
 
     def load_fonts(self):
-        '''
-        Loads font data into memory in the range of 0x0 to 0x49.
-        '''
+        """Loads font data into memory in the range of 0x0 to 0x49."""
         self.vm.mem.store_many(0, FONTS)
 
     def load_sound(self, fname):
-        '''
-        Loads sound effects using the pygame API.
-        '''
+        """Loads sound effects using the pygame API."""
         pygame.mixer.init()
         pygame.mixer.music.load(fname)
 
     def set_pixel(self, point, color):
-        '''
-        Sets the pixel to on or off at the given point (X, Y).
-        '''
+        """Sets the pixel to on or off at the given point (X, Y)."""
         pygame.draw.rect(
             self.surface, COLORS[color],
             (point[0] * self.scale, point[1] * self.scale,
@@ -106,9 +100,7 @@ class Display(object):
         )
 
     def get_pixel(self, point):
-        '''
-        Gets the value of the pixel at the given point (X, Y).
-        '''
+        """Gets the value of the pixel at the given point (X, Y)."""
         color = self.surface.get_at(
             (point[0] * self.scale, point[1] * self.scale)
         )
@@ -116,9 +108,7 @@ class Display(object):
         return color
 
     def draw_sprite(self, point, data):
-        '''
-        Displays the bytes of data as sprites on screen at coordinates (X, Y).
-        '''
+        """Displays the bytes of data as sprites on the screen at coordinates (X, Y)."""
         self.vm.v[0xf] = 0
 
         for iy, y in enumerate(data):
@@ -135,8 +125,7 @@ class Display(object):
         pygame.display.flip()
 
     def clear_display(self):
-        '''
-        Fills all the pixels on the screen in the same color (default black).
-        '''
+        """Fills all the pixels on the screen in the same color (default black)."""
+
         self.surface.fill(COLORS[0])
         pygame.display.flip()
