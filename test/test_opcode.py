@@ -14,6 +14,39 @@ class TestOpcode(unittest.TestCase):
     def setUp(self):
         self.vm_opcode = Opcode(Chip8([]))
 
+    def test_clear_or_return_instruction(self):
+        """
+        Clear or return instruction.
+        The opcodes that starts with the 0x0 prefix.
+        """
+        with self.assertRaises(InvalidOpcodeException):
+            self.vm_opcode.instruction_lookup(0x0123)
+
+        with self.assertRaises(InvalidOpcodeException):
+            self.vm_opcode.instruction_lookup(0x00ED)
+
+    def test_bitwise_instruction(self):
+        """
+        Bitwise instructions.
+        The opcodes that starts with the 0x8 prefix.
+        """
+        with self.assertRaises(InvalidOpcodeException):
+            self.vm_opcode.instruction_lookup(0x8008)
+
+        with self.assertRaises(InvalidOpcodeException):
+            self.vm_opcode.instruction_lookup(0x800F)
+
+    def test_misc_instruction(self):
+        """
+        Misc instructions.
+        The opcodes that starts with the 0xF prefix.
+        """
+        with self.assertRaises(InvalidOpcodeException):
+            self.vm_opcode.instruction_lookup(0xF008)
+
+        with self.assertRaises(InvalidOpcodeException):
+            self.vm_opcode.instruction_lookup(0xF054)
+
     def test_ret_instruction(self):
         """
         00EE - RET
