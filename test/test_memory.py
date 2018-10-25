@@ -59,11 +59,11 @@ class TestVMMemory(unittest.TestCase):
     def test_method_fetch_word(self):
         # Checks too high address
         with self.assertRaises(ValueError):
-            word = self.mem.fetch_word(0x1000)
+            self.mem.fetch_word(0x1000)
 
         # Checks negative address
         with self.assertRaises(ValueError):
-            word = self.mem.fetch_word(-0x100)
+            self.mem.fetch_word(-0x100)
 
         # Checks fetch word
         self.mem.store_word(0x0, 0xffee)
@@ -92,15 +92,15 @@ class TestVMMemory(unittest.TestCase):
     def test_method_fetch_many(self):
         # Checks too high address
         with self.assertRaises(ValueError):
-            data = self.mem.fetch_many(0x1000, 1)
+            self.mem.fetch_many(0x1000, 1)
 
         # Checks too high lenght
         with self.assertRaises(ValueError):
-            data = self.mem.fetch_many(0x0, 0x1001)
+            self.mem.fetch_many(0x0, 0x1001)
 
         # Checks negative address
         with self.assertRaises(ValueError):
-            data = self.mem.fetch_many(-0x100, 10)
+            self.mem.fetch_many(-0x100, 10)
 
         # Checks fetch many
         self.mem.store_many(0x0, [0xaa, 0xbb, 0xcc])
