@@ -9,8 +9,11 @@ virtualenv:
   system_site_package: true
 install:
   - pip install -r requirements.txt
+  - pip install coveralls
 script:
-  - python -m unittest discover test/
+  - coverage run -m unittest discover test/
+after_success:
+  - coveralls
 notifications:
   on_success: never
   on_failure: always
