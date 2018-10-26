@@ -2,7 +2,9 @@
 > CHIP-8 interpreter written using Python language & pygame library.
 
 [![Build Status](https://travis-ci.org/mfurga/chip8.svg?branch=master)](https://travis-ci.org/mfurga/chip8)
-[![License MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/mfurga/chip8/blob/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/mfurga/chip8/badge.svg?branch=master)](https://coveralls.io/github/mfurga/chip8?branch=master)
+[![License MIT](https://img.shields.io/badge/license-MIT-%237900CA.svg)](https://github.com/mfurga/chip8/blob/master/LICENSE)
+[![Python2.7](https://img.shields.io/badge/python-2.7-blue.svg)](https://www.python.org/downloads/)
 
 ![CHIP-8 Games](https://raw.githubusercontent.com/mfurga/chip8/master/demo.png)
 
