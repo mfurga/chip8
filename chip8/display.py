@@ -126,6 +126,5 @@ class Display(object):
 
     def clear_display(self):
         """Fills all the pixels on the screen in the same color (default black)."""
-
         self.surface.fill(COLORS[0])
         pygame.display.flip()
