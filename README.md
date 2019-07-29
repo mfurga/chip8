@@ -12,7 +12,7 @@
 CHIP-8 is an interpreted programming language which was initially used in the late 1970s. It was made to allow more easily programed game for those computers. All programs written in CHIP-8 are run on a virtual machine which interprets each instruction.
 
 ### Memory map
-Most common implementation of CHIP-8 has 4096 (0x1000) bytes of RAM, starting at location 0x000 (0) to 0xFFF (4095). The first 512 (0x200) bytes are reserved for the CHIP-8 interpreter, in my case this space is used to store fonts data and stack.
+The most common implementation of CHIP-8 has 4096 (0x1000) bytes of RAM, starting at location 0x000 (0) to 0xFFF (4095). The first 512 (0x200) bytes are reserved for the CHIP-8 interpreter, in my case this space is used to store fonts data and stack.
 
 ```
 +----------------+= 0xFFF (4095) End of CHIP-8 RAM
